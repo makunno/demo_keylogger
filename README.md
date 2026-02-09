@@ -28,5 +28,5 @@ This project demonstrates **browser-based keystroke capture** for **cybersecurit
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/makunno/keylogger_demo.git
+git clone https://github.com/makunno/demo_keylogger.git
 cd keylogger_demo.git
